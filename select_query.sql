@@ -85,3 +85,6 @@ FROM
     employees
 WHERE
     first_name != 'Mark';
+
+-- Distinct select (retrive only distinct record)
+SELECT DISTINCT gender from employees;
