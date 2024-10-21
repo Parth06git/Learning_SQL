@@ -24,7 +24,7 @@ SELECT * FROM departments ORDER BY dept_no;
 
 CREATE TABLE department_dup (
     dept_no CHAR(4) NOT NULL PRIMARY KEY,
-    dept_name CHAR(40) NOT NULL
+    dept_name CHAR(40)
 );
 
 -- Adding some data from another table
