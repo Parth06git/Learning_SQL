@@ -51,3 +51,43 @@ DELETE FROM dept_manager_dup WHERE dept_no = 'd001';
 SELECT * FROM dept_manager_dup;
 
 COMMIT;
+
+-- Adding some new employees data
+INSERT INTO
+    employees
+VALUES (
+        999904,
+        '1989-12-06',
+        'Leo',
+        'Sharma',
+        'M',
+        '2009-5-30'
+    ),
+    (
+        999905,
+        '1980-11-26',
+        'Anay',
+        'Gupta',
+        'F',
+        '2007-08-02'
+    ),
+    (
+        999906,
+        '1998-12-06',
+        'John',
+        'Smith',
+        'M',
+        '2012-5-30'
+    ),
+    (
+        999907,
+        '1995-12-06',
+        'Johnson',
+        'Maxwell',
+        'M',
+        '2010-5-30'
+    );
+
+SELECT * FROM employees ORDER BY emp_no DESC;
+
+COMMIT;
