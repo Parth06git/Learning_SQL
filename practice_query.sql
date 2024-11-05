@@ -27,3 +27,27 @@ GROUP BY
 HAVING
     avg_salary < 75000
 ORDER BY avg_salary DESC;
+
+-- Extract the information about all department managers who were hired between the 1st of January 1990 and the 1st of January 1995.
+
+SELECT *
+FROM dept_manager
+WHERE
+    emp_no IN (
+        SELECT emp_no
+        FROM employees
+        WHERE
+            hire_date BETWEEN '1990-01-01' AND '1995-01-01'
+    );
+
+-- Select the entire information for all employees whose job title is “Assistant Engineer”.
+SELECT *
+FROM employees e
+WHERE
+    EXISTS (
+        SELECT *
+        FROM titles ti
+        WHERE
+            e.emp_no = ti.emp_no
+            AND ti.title = 'Assistant Engineer'
+    );
