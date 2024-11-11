@@ -51,3 +51,11 @@ WHERE
             e.emp_no = ti.emp_no
             AND ti.title = 'Assistant Engineer'
     );
+
+-- Execute a query containing a self-join of the emp_manager table on the employee and manager numbers, using the aliases e1 and e2. In the field list, designate all columns in the order they appear in the e2 table.
+
+SELECT e2.*
+FROM
+    emp_manager e1
+    JOIN emp_manager e2 ON e1.emp_no = e2.manager_no
+ORDER BY e2.manager_no;
