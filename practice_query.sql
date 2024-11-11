@@ -59,3 +59,12 @@ FROM
     emp_manager e1
     JOIN emp_manager e2 ON e1.emp_no = e2.manager_no
 ORDER BY e2.manager_no;
+
+-- Create a view that will extract the average salary of all managers registered in the database. Round this value to the nearest cent.
+
+CREATE OR REPLACE VIEW v_manager_avg_salary AS
+SELECT ROUND(AVG(s.salary), 2) AS Average_Salary
+FROM salaries s
+    JOIN dept_manager dm ON s.emp_no = dm.emp_no;
+
+SELECT * FROM v_manager_avg_salary;
